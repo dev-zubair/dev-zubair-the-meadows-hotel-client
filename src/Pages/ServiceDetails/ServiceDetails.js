@@ -39,7 +39,13 @@ const ServiceDetails = () => {
             body: JSON.stringify(selected),
         })
             .then(res => res.json())
-            .then(result => console.log(result))
+            .then(result => {
+                if (result.insertedId) {
+                    alert('Thank you! Your Order have been Placed successfully')
+                    // console.log(data);
+                    e.target.reset();
+                }
+            })
         e.preventDefault()
     }
 
