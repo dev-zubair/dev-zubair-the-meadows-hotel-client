@@ -10,14 +10,14 @@ const MyOrder = () => {
     const [control, setConrol] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrder/${user?.email}`)
+        fetch(`https://wicked-cheateau-17300.herokuapp.com/myOrder/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [user.email]);
     // console.log(orders);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        fetch(`https://wicked-cheateau-17300.herokuapp.com/deleteOrder/${id}`, {
             method: "DELETE",
             headers: { "content-type": "application/json" },
         })
@@ -47,9 +47,10 @@ const MyOrder = () => {
                             <th>Cancellation</th>
                         </tr>
                     </thead>
-                    {orders.map((order, index) => (
-                        <tbody>
-                            <tr>
+                    <tbody>
+                        {orders.map((order, index) => (
+
+                            <tr key={order._id}>
                                 <td>{index}</td>
                                 <td>{order.name}</td>
                                 <td>{order.email}</td>
@@ -57,11 +58,11 @@ const MyOrder = () => {
                                 <td>{order.price}</td>
                                 <td><button onClick={handleDelete} style={{ backgroundColor: "#C19B77" }} className="delete-btn" >Delete</button></td>
                             </tr>
-                        </tbody>
-                    ))}
+                        ))}
+                    </tbody>
                 </Table>
             </Container>
-        </div>
+        </div >
     );
 };
 

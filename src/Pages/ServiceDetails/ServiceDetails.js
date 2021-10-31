@@ -33,7 +33,7 @@ const ServiceDetails = () => {
         delete selected._id;
         console.log(selected);
         // console.log('button working');
-        fetch(`http://localhost:5000/addOrder`, {
+        fetch(`https://wicked-cheateau-17300.herokuapp.com/addOrder`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(selected),

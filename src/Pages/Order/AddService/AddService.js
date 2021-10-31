@@ -14,7 +14,7 @@ const AddService = () => {
         const description = desRef.current.value;
         const newService = { name, rooms, price, description };
 
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://wicked-cheateau-17300.herokuapp.com/addservice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
