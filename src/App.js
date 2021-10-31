@@ -74,11 +74,6 @@ function App() {
               <ManageOrder></ManageOrder>
             </Route>
 
-            {/* <PrivateRoute path="/doctors">
-              <Doctors></Doctors>
-            </PrivateRoute> */}
-
-
             <Route path="/contact">
               <Contact></Contact>
             </Route>
